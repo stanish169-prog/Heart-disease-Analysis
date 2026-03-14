@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap');
+
+* {
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
+
+html, body {
+    font-family: 'Montserrat', sans-serif !important;
+    background: #0a0e27 !important;
+    color: #ffffff !important;
+}
+
+section {
+    background: linear-gradient(180deg, #0a0e27 0%, #1a1f3a 50%, #0f1428 100%) !important;
+    padding: 50px 30px !important;
+    min-height: 100vh !important;
+}
+
+.page-title{
+    text-align: center !important;
+    font-size: 42px !important;
+    font-weight: 900 !important;
+    margin-top: 30px !important;
+    margin-bottom: 15px !important;
+    background: linear-gradient(120deg, #00d4ff, #0099ff, #6633ff) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    letter-spacing: -1px !important;
+    text-transform: uppercase !important;
+    filter: drop-shadow(0 10px 30px rgba(0, 212, 255, 0.3)) !important;
+}
+
+/* Subtitle */
+.story-subtitle{
+    text-align: center !important;
+    font-size: 15px !important;
+    opacity: 0.85 !important;
+    margin-bottom: 40px !important;
+    color: #b3b8c6 !important;
+    line-height: 1.6 !important;
+    max-width: 800px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Glass Container */
+.viz-wrapper{
+    width: 95% !important;
+    max-width: 1200px !important;
+    margin: auto !important;
+    padding: 30px !important;
+    border-radius: 20px !important;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.08), rgba(102, 51, 255, 0.08)) !important;
+    border: 2px solid rgba(0, 212, 255, 0.2) !important;
+    backdrop-filter: blur(20px) !important;
+    box-shadow: 0 25px 70px rgba(0, 212, 255, 0.2), inset 0 0 60px rgba(102, 51, 255, 0.05) !important;
+    animation: fadeUp 0.8s ease !important;
+}
+
+iframe{
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9 !important;
+    min-height: 500px !important;
+    border-radius: 15px !important;
+    border: 2px solid rgba(0, 212, 255, 0.2) !important;
+    box-shadow: 0 20px 50px rgba(0, 212, 255, 0.15) !important;
+}
+
+/* Animation */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media(max-width:1024px){
+    section {
+        padding: 40px 20px !important;
+    }
+    
+    .page-title {
+        font-size: 36px !important;
+    }
+    
+    .viz-wrapper {
+        width: 95% !important;
+        padding: 25px !important;
+    }
+}
+
+@media(max-width:768px){
+    .page-title {
+        font-size: 28px !important;
+    }
+    
+    .story-subtitle {
+        font-size: 14px !important;
+    }
+    
+    .viz-wrapper {
+        width: 100% !important;
+        padding: 20px !important;
+        border-radius: 15px !important;
+    }
+    
+    iframe {
+        min-height: 400px !important;
+        border-radius: 12px !important;
+    }
+}
+</style>
+
+<section>
+    <h2 class="page-title">Heart Disease Analysis Story</h2>
+    <p class="story-subtitle">
+        A complete visual journey exploring cardiovascular risk patterns,
+        demographic trends, and lifestyle impacts through interactive storytelling.
+    </p>
+
+    <div class="viz-wrapper">
+        <iframe
+            src="https://public.tableau.com/views/PallaviSingh_17729664375520/LifestyleRiskFactors2?:showVizHome=no&:embed=true"
+            frameborder="0"
+            allowfullscreen="">
+        </iframe>
+    </div>
+</section>
+
+{% endblock %}

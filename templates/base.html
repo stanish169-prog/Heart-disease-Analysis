@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Heart Disease Analysis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='static.css') }}">
+
+    <style>
+        * {
+            margin: 0 !important;
+            padding: 0 !important;
+            box-sizing: border-box !important;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif !important;
+            background: #0a0e27 !important;
+            color: #ffffff !important;
+            overflow-x: hidden !important;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            position: sticky !important;
+            top: 0 !important;
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            padding: 18px 40px !important;
+            background: linear-gradient(135deg, rgba(10, 14, 39, 0.95), rgba(26, 31, 58, 0.95)) !important;
+            border-bottom: 2px solid rgba(0, 212, 255, 0.1) !important;
+            backdrop-filter: blur(20px) !important;
+            z-index: 1000 !important;
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1) !important;
+        }
+
+        .logo {
+            font-size: 24px !important;
+            font-weight: 900 !important;
+            background: linear-gradient(120deg, #00d4ff, #0099ff, #6633ff) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+            letter-spacing: -0.5px !important;
+            text-transform: uppercase !important;
+            filter: drop-shadow(0 5px 15px rgba(0, 212, 255, 0.3)) !important;
+        }
+
+        .nav-links {
+            display: flex !important;
+            gap: 0 !important;
+        }
+
+        .nav-links a {
+            margin-left: 35px !important;
+            text-decoration: none !important;
+            color: #b3b8c6 !important;
+            font-weight: 600 !important;
+            position: relative !important;
+            transition: all 0.3s ease !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1px !important;
+            font-size: 13px !important;
+        }
+
+        /* Hover Underline Animation */
+        .nav-links a::after {
+            content: "" !important;
+            position: absolute !important;
+            width: 0% !important;
+            height: 3px !important;
+            bottom: -8px !important;
+            left: 0 !important;
+            background: linear-gradient(90deg, #00d4ff, #0099ff) !important;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+        }
+
+        .nav-links a:hover::after {
+            width: 100% !important;
+        }
+
+        .nav-links a:hover {
+            color: #00d4ff !important;
+            text-shadow: 0 0 15px rgba(0, 212, 255, 0.5) !important;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center !important;
+            padding: 35px 30px !important;
+            background: linear-gradient(135deg, rgba(10, 14, 39, 0.95), rgba(26, 31, 58, 0.95)) !important;
+            border-top: 2px solid rgba(0, 212, 255, 0.1) !important;
+            backdrop-filter: blur(20px) !important;
+            margin-top: 60px !important;
+            font-size: 13px !important;
+            letter-spacing: 1px !important;
+            box-shadow: 0 -10px 30px rgba(0, 212, 255, 0.1) !important;
+        }
+
+        footer span {
+            background: linear-gradient(120deg, #00d4ff, #0099ff) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+            font-weight: 800 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1.5px !important;
+        }
+
+        /* Responsive */
+        @media(max-width: 768px){
+            .navbar {
+                padding: 15px 20px !important;
+                flex-direction: column !important;
+                gap: 15px !important;
+            }
+
+            .nav-links {
+                flex-wrap: wrap !important;
+                justify-content: center !important;
+            }
+
+            .nav-links a {
+                margin-left: 15px !important;
+                font-size: 12px !important;
+            }
+
+            .logo {
+                font-size: 20px !important;
+            }
+
+            footer {
+                padding: 25px 15px !important;
+                font-size: 12px !important;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">❤️ Heart Disease Analysis</div>
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/story">Story</a>
+    </div>
+</nav>
+
+{% block content %}{% endblock %}
+
+<footer>
+    © 2026 <span>Heart Disease Project</span> | KIET DEEMED TO BE UNIVERSITY | All rights reserved.
+</footer>
+
+</body>
+</html>
